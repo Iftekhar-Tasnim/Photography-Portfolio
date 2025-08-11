@@ -19,6 +19,9 @@
             },
         }
     </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-base-100">
     <!-- Navigation -->
@@ -58,42 +61,107 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero min-h-screen relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-        <div class="hero-overlay bg-opacity-70"></div>
-        <div class="hero-content text-center text-neutral-content relative z-10">
+    <!-- Hero Section with Image Carousel -->
+    <div class="hero min-h-screen relative overflow-hidden">
+        <!-- Carousel Container -->
+        <div class="carousel w-full h-full absolute inset-0">
+            <!-- Slide 1: Landscape Photography -->
+            <div id="slide1" class="carousel-item relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                     class="w-full h-full object-cover" alt="Landscape Photography" />
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+            
+            <!-- Slide 2: Portrait Photography -->
+            <div id="slide2" class="carousel-item relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     class="w-full h-full object-cover" alt="Portrait Photography" />
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+            
+            <!-- Slide 3: Street Photography -->
+            <div id="slide3" class="carousel-item relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     class="w-full h-full object-cover" alt="Street Photography" />
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+        </div>
+        
+        <!-- Carousel Navigation -->
+        <div class="absolute top-1/2 left-4 transform -translate-y-1/2 z-20">
+            <a href="#slide3" class="btn btn-circle btn-outline btn-sm text-white border-white hover:bg-white hover:text-gray-900" onclick="previousSlide()">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </a>
+        </div>
+        <div class="absolute top-1/2 right-4 transform -translate-y-1/2 z-20">
+            <a href="#slide2" class="btn btn-circle btn-outline btn-sm text-white border-white hover:bg-white hover:text-gray-900" onclick="nextSlide()">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
+        
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-100 transition-opacity cursor-pointer" data-slide="1" onclick="showSlide(1)"></button>
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-60 transition-opacity cursor-pointer" data-slide="2" onclick="showSlide(2)"></button>
+            <button class="carousel-indicator w-3 h-3 rounded-full bg-white opacity-60 transition-opacity cursor-pointer" data-slide="3" onclick="showSlide(3)"></button>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content text-center text-white relative z-10">
             <div class="max-w-4xl">
-                <div class="badge badge-primary mb-6 text-lg px-6 py-3">Professional Photography</div>
-                <h1 class="mb-8 text-6xl md:text-7xl font-bold leading-tight">
-                    Capturing Life's 
+                
+                <h1 class="mb-8 text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+                    Capturing 
                     <span class="text-primary">Beautiful Moments</span>
                 </h1>
-                <p class="mb-8 text-xl md:text-2xl opacity-90 max-w-2xl mx-auto">
-                    From breathtaking landscapes to intimate portraits, I transform ordinary moments into extraordinary memories through the art of photography.
+                <p class="mb-8 text-xl md:text-2xl opacity-95 max-w-2xl mx-auto drop-shadow-lg">
+                    Transforming ordinary moments into extraordinary memories through photography.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="portfolio.html" class="btn btn-primary btn-lg text-lg px-8">
-                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        View Portfolio
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <!-- View Portfolio Button -->
+                    <a href="portfolio.html" class="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-primary-focus to-primary shadow-2xl hover:shadow-primary/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative flex items-center px-8 py-4 text-white">
+                            <div class="mr-3 p-2 bg-white/20 rounded-full group-hover:bg-white/30 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-bold">View Portfolio</span>
+                            <div class="ml-3 p-2 bg-white/20 rounded-full group-hover:translate-x-1 transition-transform duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </a>
-                    <a href="contact.html" class="btn btn-outline btn-lg text-lg px-8 text-white border-white hover:bg-white hover:text-gray-900">
-                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                        </svg>
-                        Get In Touch
+
+                    <!-- Get In Touch Button -->
+                    <a href="contact.html" class="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 shadow-2xl hover:shadow-white/20 transition-all duration-500 transform hover:scale-105 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative flex items-center px-8 py-4 text-white">
+                            <div class="mr-3 p-2 bg-white/20 rounded-full group-hover:bg-white/30 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-bold">Get In Touch</span>
+                            <div class="ml-3 p-2 bg-white/20 rounded-full group-hover:rotate-12 transition-transform duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
         </div>
         
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
+
     </div>
 
     <!-- Statistics Section -->
@@ -495,83 +563,9 @@
         </aside>
     </footer>
 
-    <!-- Theme Toggle Script -->
-    <script>
-        // Theme toggle functionality
-        const themeController = document.querySelector('.theme-controller');
-        const html = document.documentElement;
-        
-        // Check for saved theme preference or default to 'light'
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        themeController.checked = currentTheme === 'dark';
-        
-        // Theme toggle event
-        themeController.addEventListener('change', function() {
-            const newTheme = this.checked ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.card, .stat, .hero-content').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-
-    <style>
-        @keyframes fade-in {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fade-in {
-            animation: fade-in 0.8s ease-out forwards;
-        }
-        
-        .hero {
-            background-attachment: fixed;
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                background-attachment: scroll;
-            }
-        }
-    </style>
 </body>
 </html>

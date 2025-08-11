@@ -19,6 +19,9 @@
             },
         }
     </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-base-100">
     <!-- Navigation -->
@@ -337,28 +340,7 @@
         </aside>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        // Theme toggle functionality
-        const themeController = document.querySelector('.theme-controller');
-        const html = document.documentElement;
-        
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        themeController.checked = currentTheme === 'dark';
-        
-        themeController.addEventListener('change', function() {
-            const newTheme = this.checked ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Scroll to pricing function
-        function scrollToPricing(service) {
-            document.getElementById('pricing').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
-        }
-    </script>
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
