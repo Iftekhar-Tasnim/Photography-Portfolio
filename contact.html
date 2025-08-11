@@ -226,16 +226,26 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Find My Studio</h2>
             <div class="bg-base-100 rounded-lg shadow-xl p-8">
-                <div class="aspect-video bg-base-300 rounded-lg flex items-center justify-center">
-                    <div class="text-center">
-                        <svg class="w-16 h-16 mx-auto mb-4 text-base-content/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <div class="aspect-video bg-base-300 rounded-lg overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902442430136!2d90.3273143!3d23.810332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1d915066275%3A0xcc3bcff9a8326efd!2sDhaka%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1703123456789!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Studio Location in Dhaka, Bangladesh">
+                    </iframe>
+                </div>
+                <div class="text-center mt-4">
+                    <p class="text-base-content/70 mb-2">📍 Dhaka, Bangladesh</p>
+                    <a href="https://maps.google.com/?q=Dhaka,Bangladesh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                        <p class="text-lg font-semibold">Interactive Map</p>
-                        <p class="text-base-content/70">123 Photography Street, Creative District, NY 10001</p>
-                        <button class="btn btn-primary mt-4">Get Directions</button>
-                    </div>
+                        Get Directions
+                    </a>
                 </div>
             </div>
         </div>
