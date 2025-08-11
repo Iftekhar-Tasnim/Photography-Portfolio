@@ -79,3 +79,12 @@
         margin-bottom: 1rem;
     }
 }
+
+/* Footer width hardening to prevent upstream sections from constraining it */
+footer.footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
