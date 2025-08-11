@@ -73,76 +73,215 @@
 
     <!-- Services Overview -->
     <div class="container mx-auto px-4 py-16">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Our Photography Services</h2>
+            <p class="text-xl text-base-content/70 max-w-3xl mx-auto">From intimate portraits to grand events, I offer comprehensive photography services tailored to capture your unique moments with artistic excellence.</p>
+        </div>
+
+        <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Portrait Photography -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Portrait" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Portrait Photography</h2>
-                    <p>Professional portraits for individuals, families, and corporate needs. Studio and outdoor sessions available.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('portrait')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-base-300 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Portrait Photography" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-primary/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Portrait Photography</h3>
+                            <p class="text-white/90 text-sm">Professional & Creative Portraits</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Portrait Photography</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">Professional portraits for individuals, families, and corporate needs. Studio and outdoor sessions available with creative direction.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-success/20 text-success px-2 py-1 rounded-full">Studio & Outdoor</span>
+                            <span class="bg-info/20 text-info px-2 py-1 rounded-full">Creative Direction</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="scrollToPricing('portrait')">View Pricing</button>
                     </div>
                 </div>
             </div>
 
             <!-- Event Photography -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Event" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Event Photography</h2>
-                    <p>Capture your special moments at weddings, parties, corporate events, and celebrations.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('event')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/5 to-accent/5 border border-base-300 hover:border-secondary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Event Photography" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-secondary/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Event Photography</h3>
+                            <p class="text-white/90 text-sm">Weddings, Parties & Corporate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Event Photography</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">Capture your special moments at weddings, parties, corporate events, and celebrations with candid and artistic shots.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-success/20 text-success px-2 py-1 rounded-full">Candid Shots</span>
+                            <span class="bg-warning/20 text-warning px-2 py-1 rounded-full">Full Coverage</span>
+                        </div>
+                        <button class="btn btn-secondary btn-sm" onclick="scrollToPricing('event')">View Pricing</button>
                     </div>
                 </div>
             </div>
 
             <!-- Landscape Photography -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Landscape" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Landscape Photography</h2>
-                    <p>Breathtaking landscape and nature photography for home decor, offices, and commercial use.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('landscape')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent/5 to-success/5 border border-base-300 hover:border-accent/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Landscape Photography" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-accent/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Landscape Photography</h3>
+                            <p class="text-white/90 text-sm">Nature & Scenic Beauty</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Landscape Photography</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">Breathtaking landscape and nature photography for home decor, offices, and commercial use with stunning compositions.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-success/20 text-success px-2 py-1 rounded-full">Nature Focus</span>
+                            <span class="bg-info/20 text-info px-2 py-1 rounded-full">Artistic Compositions</span>
+                        </div>
+                        <button class="btn btn-accent btn-sm" onclick="scrollToPricing('landscape')">View Pricing</button>
                     </div>
                 </div>
             </div>
 
             <!-- Product Photography -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Product" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Product Photography</h2>
-                    <p>High-quality product photography for e-commerce, catalogs, and marketing materials.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('product')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-success/5 to-warning/5 border border-base-300 hover:border-success/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Product Photography" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-success/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Product Photography</h3>
+                            <p class="text-white/90 text-sm">E-commerce & Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Product Photography</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">High-quality product photography for e-commerce, catalogs, and marketing materials with professional lighting.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-success/20 text-success px-2 py-1 rounded-full">Professional Lighting</span>
+                            <span class="bg-warning/20 text-warning px-2 py-1 rounded-full">E-commerce Ready</span>
+                        </div>
+                        <button class="btn btn-success btn-sm" onclick="scrollToPricing('product')">View Pricing</button>
                     </div>
                 </div>
             </div>
 
             <!-- Street Photography -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Street" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Street Photography</h2>
-                    <p>Urban life and street scenes capturing the energy and culture of city environments.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('street')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-warning/5 to-error/5 border border-base-300 hover:border-warning/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Street Photography" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-warning/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Street Photography</h3>
+                            <p class="text-white/90 text-sm">Urban Life & Culture</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Street Photography</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">Urban life and street scenes capturing the energy and culture of city environments with authentic moments.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-warning/20 text-warning px-2 py-1 rounded-full">Urban Focus</span>
+                            <span class="bg-error/20 text-error px-2 py-1 rounded-full">Authentic Moments</span>
+                        </div>
+                        <button class="btn btn-warning btn-sm" onclick="scrollToPricing('street')">View Pricing</button>
                     </div>
                 </div>
             </div>
 
             <!-- Photo Editing -->
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Editing" class="w-full h-48 object-cover" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Photo Editing</h2>
-                    <p>Professional photo editing and retouching services to enhance your images.</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onclick="scrollToPricing('editing')">View Pricing</button>
+            <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-error/5 to-info/5 border border-base-300 hover:border-error/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Photo Editing" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <div class="bg-error/90 backdrop-blur-sm rounded-lg p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <h3 class="text-white font-semibold text-lg">Photo Editing</h3>
+                            <p class="text-white/90 text-sm">Professional Retouching</p>
+                        </div>
                     </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 bg-error/10 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Photo Editing</h3>
+                    </div>
+                    <p class="text-base-content/70 mb-4 leading-relaxed">Professional photo editing and retouching services to enhance your images with advanced techniques.</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2 text-sm text-base-content/60">
+                            <span class="bg-error/20 text-error px-2 py-1 rounded-full">Advanced Techniques</span>
+                            <span class="bg-info/20 text-info px-2 py-1 rounded-full">Professional Quality</span>
+                        </div>
+                        <button class="btn btn-error btn-sm" onclick="scrollToPricing('editing')">View Pricing</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+            <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
+                <h3 class="text-2xl font-bold mb-4">Ready to Start Your Photography Journey?</h3>
+                <p class="text-base-content/70 mb-6 max-w-2xl mx-auto">Let's discuss your vision and create something extraordinary together. Every project is unique, and I'm here to bring your ideas to life.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="btn btn-primary btn-lg" onclick="scrollToPricing()">View All Pricing</button>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Get in Touch</a>
                 </div>
             </div>
         </div>
