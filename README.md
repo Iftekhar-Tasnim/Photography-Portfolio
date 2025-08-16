@@ -1,4 +1,4 @@
-# 📸 Photography Portfolio Website
+# 📸 Ratul Chowdhury Photography Portfolio Website
 
 A modern, responsive, and professional photography portfolio website built with cutting-edge web technologies. This project showcases photography work with an elegant design, interactive features, and seamless user experience across all devices.
 

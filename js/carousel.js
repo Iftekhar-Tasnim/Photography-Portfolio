@@ -19,6 +19,7 @@ function showSlide(slideNumber) {
         const slide = document.getElementById(`slide${i}`);
         if (slide) {
             slide.style.display = 'none';
+            slide.style.opacity = '0';
         }
     }
     
@@ -26,10 +27,17 @@ function showSlide(slideNumber) {
     const currentSlideElement = document.getElementById(`slide${slideNumber}`);
     if (currentSlideElement) {
         currentSlideElement.style.display = 'block';
+        // Add a small delay for smooth transition
+        setTimeout(() => {
+            currentSlideElement.style.opacity = '1';
+        }, 50);
     }
     
     // Update indicators
     updateIndicators(slideNumber);
+    
+    // Update current slide variable
+    currentSlide = slideNumber;
 }
 
 function updateIndicators(activeSlide) {
