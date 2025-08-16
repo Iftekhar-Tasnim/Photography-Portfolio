@@ -21,6 +21,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-base-100">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-[9999] bg-base-100 flex items-center justify-center transition-opacity duration-1000">
+        <div class="text-center">
+            <!-- Simple Camera Icon -->
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <svg class="w-8 h-8 text-primary-content" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+            </div>
+            
+            <!-- Simple Loading Text -->
+            <p class="text-base-content/60 text-sm">Loading...</p>
+            
+            <!-- Minimal Loading Bar -->
+            <div class="w-32 h-1 bg-base-300 rounded-full mt-4 overflow-hidden">
+                <div class="h-full bg-primary rounded-full animate-pulse" style="width: 60%;"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <div class="navbar bg-base-100/20 backdrop-blur-xl shadow-2xl sticky top-0 z-50 border-b border-white/20">
         <div class="navbar-start">
@@ -573,5 +594,33 @@
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>
+    
+    <!-- Loading Screen Script -->
+    <script>
+        // Hide loading screen after page loads
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                // Add fade-out effect
+                loadingScreen.style.opacity = '0';
+                
+                // Remove from DOM after animation completes
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 1000);
+            }
+        });
+        
+        // Fallback: Hide loading screen if load event doesn't fire
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen && loadingScreen.style.display !== 'none') {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 1000);
+            }
+        }, 3000);
+    </script>
 </body>
 </html>
