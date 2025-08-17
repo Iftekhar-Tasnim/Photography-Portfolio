@@ -1,193 +1,378 @@
-// Portfolio functionality for Photography Portfolio
-
-// Portfolio filtering
-function initializePortfolioFiltering() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.getAttribute('data-category');
-            
-            // Update active button
-            filterButtons.forEach(btn => {
-                btn.classList.remove('btn-primary');
-                btn.classList.add('btn-outline');
+// Professional Portfolio Management System
+class PortfolioManager {
+    constructor() {
+        this.currentFilter = 'all';
+        this.portfolioItems = [];
+        this.modal = null;
+        this.currentImageIndex = 0;
+        this.images = [];
+        
+        this.init();
+    }
+    
+    init() {
+        this.initializePortfolio();
+        this.initializeFilters();
+        this.initializeModal();
+        this.initializeKeyboardNavigation();
+        this.initializeTouchGestures();
+        this.initializeLazyLoading();
+    }
+    
+    initializePortfolio() {
+        // Get all portfolio items
+        this.portfolioItems = document.querySelectorAll('.portfolio-item');
+        this.images = Array.from(this.portfolioItems).map(item => ({
+            id: item.dataset.category?.split(' ')[0] || 'unknown',
+            title: item.querySelector('img')?.alt || 'Untitled',
+            category: item.dataset.category || 'other',
+            element: item
+        }));
+        
+        // Add click event listeners
+        this.portfolioItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this.openModal(index);
             });
-            button.classList.remove('btn-outline');
-            button.classList.add('btn-primary');
             
-            // Filter items
-            portfolioItems.forEach(item => {
-                if (category === 'all') {
-                    item.style.display = 'block';
-                } else {
-                    const itemCategories = item.getAttribute('data-category').split(' ');
-                    if (itemCategories.includes(category)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                }
+            // Add hover effects
+            item.addEventListener('mouseenter', () => {
+                this.addHoverEffect(item);
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                this.removeHoverEffect(item);
             });
         });
-    });
+    }
+    
+    initializeFilters() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                this.filterPortfolio(category);
+                this.updateActiveFilter(button);
+            });
+        });
+        
+        // Initialize with 'all' filter
+        this.updateActiveFilter(document.querySelector('[data-category="all"]'));
+    }
+    
+    filterPortfolio(category) {
+        this.currentFilter = category;
+        
+        this.portfolioItems.forEach(item => {
+            const itemCategories = item.dataset.category?.split(' ') || [];
+            const shouldShow = category === 'all' || itemCategories.includes(category);
+            
+            if (shouldShow) {
+                item.style.display = 'block';
+                item.classList.add('animate-in');
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 100);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // Update URL hash for bookmarking
+        if (category !== 'all') {
+            window.location.hash = `filter=${category}`;
+        } else {
+            window.location.hash = '';
+        }
+        
+        // Animate filter change
+        this.animateFilterChange();
+    }
+    
+    updateActiveFilter(activeButton) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('btn-primary');
+            btn.classList.add('btn-outline');
+        });
+        
+        // Add active class to clicked button
+        if (activeButton) {
+            activeButton.classList.remove('btn-outline');
+            activeButton.classList.add('btn-primary');
+        }
+    }
+    
+    animateFilterChange() {
+        const container = document.querySelector('.columns-1');
+        if (container) {
+            container.style.opacity = '0.5';
+            container.style.transform = 'scale(0.98)';
+            
+            setTimeout(() => {
+                container.style.opacity = '1';
+                container.style.transform = 'scale(1)';
+            }, 300);
+        }
+    }
+    
+    initializeModal() {
+        this.modal = document.getElementById('image-modal');
+        
+        if (this.modal) {
+            // Close modal on backdrop click
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) {
+                    this.closeModal();
+                }
+            });
+            
+            // Close modal on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.modal.open) {
+                    this.closeModal();
+                }
+            });
+        }
+    }
+    
+    openModal(imageIndex) {
+        if (!this.modal || imageIndex < 0 || imageIndex >= this.images.length) return;
+        
+        this.currentImageIndex = imageIndex;
+        const imageData = this.images[imageIndex];
+        const img = imageData.element.querySelector('img');
+        
+        // Update modal content
+        const modalImage = document.getElementById('modal-image');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        
+        if (modalImage && modalTitle && modalCategory) {
+            modalImage.src = img.src;
+            modalImage.alt = img.alt;
+            modalTitle.textContent = imageData.title;
+            modalCategory.textContent = imageData.category;
+            
+            // Add loading state
+            modalImage.style.opacity = '0';
+            modalImage.onload = () => {
+                modalImage.style.transition = 'opacity 0.3s ease-in-out';
+                modalImage.style.opacity = '1';
+            };
+        }
+        
+        // Show modal with animation
+        this.modal.showModal();
+        this.modal.classList.add('modal-open');
+        
+        // Add navigation arrows
+        this.addModalNavigation();
+        
+        // Update body scroll
+        document.body.style.overflow = 'hidden';
+    }
+    
+    closeModal() {
+        if (this.modal) {
+            this.modal.classList.remove('modal-open');
+            this.modal.close();
+            
+            // Remove navigation arrows
+            this.removeModalNavigation();
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+    }
+    
+    addModalNavigation() {
+        const modalContent = this.modal.querySelector('.modal-box');
+        
+        // Previous button
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'btn btn-circle btn-sm bg-black bg-opacity-50 text-white border-none absolute top-1/2 left-4 transform -translate-y-1/2 z-20';
+        prevBtn.innerHTML = `
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        `;
+        prevBtn.addEventListener('click', () => this.navigateModal(-1));
+        
+        // Next button
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn btn-circle btn-sm bg-black bg-opacity-50 text-white border-none absolute top-1/2 right-4 transform -translate-y-1/2 z-20';
+        nextBtn.innerHTML = `
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        `;
+        nextBtn.addEventListener('click', () => this.navigateModal(1));
+        
+        // Image counter
+        const counter = document.createElement('div');
+        counter.className = 'absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-lg text-sm';
+        counter.textContent = `${this.currentImageIndex + 1} / ${this.images.length}`;
+        
+        modalContent.appendChild(prevBtn);
+        modalContent.appendChild(nextBtn);
+        modalContent.appendChild(counter);
+        
+        // Store references for removal
+        this.modalNavElements = [prevBtn, nextBtn, counter];
+    }
+    
+    removeModalNavigation() {
+        if (this.modalNavElements) {
+            this.modalNavElements.forEach(element => {
+                if (element.parentElement) {
+                    element.remove();
+                }
+            });
+            this.modalNavElements = null;
+        }
+    }
+    
+    navigateModal(direction) {
+        const newIndex = this.currentImageIndex + direction;
+        
+        if (newIndex >= 0 && newIndex < this.images.length) {
+            this.openModal(newIndex);
+        }
+    }
+    
+    initializeKeyboardNavigation() {
+        document.addEventListener('keydown', (e) => {
+            if (!this.modal || !this.modal.open) return;
+            
+            switch (e.key) {
+                case 'ArrowLeft':
+                    this.navigateModal(-1);
+                    break;
+                case 'ArrowRight':
+                    this.navigateModal(1);
+                    break;
+                case 'Escape':
+                    this.closeModal();
+                    break;
+            }
+        });
+    }
+    
+    initializeTouchGestures() {
+        let startX = 0;
+        let startY = 0;
+        
+        this.modal?.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+        
+        this.modal?.addEventListener('touchend', (e) => {
+            if (!startX || !startY) return;
+            
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            
+            // Horizontal swipe threshold
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    this.navigateModal(1); // Swipe left -> next
+                } else {
+                    this.navigateModal(-1); // Swipe right -> previous
+                }
+            }
+            
+            startX = 0;
+            startY = 0;
+        });
+    }
+    
+    initializeLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+            
+            // Observe all images with data-src
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+    
+    addHoverEffect(item) {
+        item.style.transform = 'scale(1.02)';
+        item.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+    }
+    
+    removeHoverEffect(item) {
+        item.style.transform = 'scale(1)';
+        item.style.boxShadow = '';
+    }
+    
+    // Public methods for external use
+    filterByCategory(category) {
+        this.filterPortfolio(category);
+    }
+    
+    openImageModal(imageId) {
+        const index = this.images.findIndex(img => img.id === imageId);
+        if (index !== -1) {
+            this.openModal(index);
+        }
+    }
 }
 
-// Image data for modal
-const imageData = {
-    'nature-1': {
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
-        title: 'Mountain Landscape',
-        category: 'Nature Photography'
-    },
-    'nature-2': {
-        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=1000&fit=crop',
-        title: 'Forest Path',
-        category: 'Nature Photography'
-    },
-    'nature-3': {
-        src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop',
-        title: 'Ocean Waves',
-        category: 'Nature Photography'
-    },
-    'nature-4': {
-        src: 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&h=800&fit=crop',
-        title: 'Wildlife Portrait',
-        category: 'Nature Photography'
-    },
-    'nature-5': {
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
-        title: 'Sunset Silhouette',
-        category: 'Nature Photography'
-    },
-    'portrait-1': {
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=1000&fit=crop',
-        title: 'Professional Portrait',
-        category: 'Portrait Photography'
-    },
-    'portrait-2': {
-        src: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=1200&h=800&fit=crop',
-        title: 'Creative Portrait',
-        category: 'Portrait Photography'
-    },
-    'portrait-3': {
-        src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=1200&h=1000&fit=crop',
-        title: 'Studio Portrait',
-        category: 'Portrait Photography'
-    },
-    'portrait-4': {
-        src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1200&h=1000&fit=crop',
-        title: 'Fashion Portrait',
-        category: 'Portrait Photography'
-    },
-    'street-1': {
-        src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-        title: 'Urban Street',
-        category: 'Street Photography'
-    },
-    'street-2': {
-        src: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
-        title: 'City Life',
-        category: 'Street Photography'
-    },
-    'street-3': {
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
-        title: 'Street People',
-        category: 'Street Photography'
-    },
-    'arch-1': {
-        src: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&h=1000&fit=crop',
-        title: 'Modern Building',
-        category: 'Architecture Photography'
-    },
-    'arch-2': {
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
-        title: 'Historical Building',
-        category: 'Architecture Photography'
-    },
-    'arch-3': {
-        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=600&fit=crop',
-        title: 'Interior Design',
-        category: 'Architecture Photography'
-    },
-    'abstract-1': {
-        src: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=800&fit=crop',
-        title: 'Abstract Art',
-        category: 'Abstract Photography'
-    },
-    'abstract-2': {
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
-        title: 'Geometric Patterns',
-        category: 'Abstract Photography'
-    },
-    'event-1': {
-        src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=600&fit=crop',
-        title: 'Wedding Ceremony',
-        category: 'Event Photography'
-    },
-    'event-2': {
-        src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=600&fit=crop',
-        title: 'Corporate Event',
-        category: 'Event Photography'
-    },
-    'product-1': {
-        src: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop',
-        title: 'Product Photography',
-        category: 'Product Photography'
-    },
-    'macro-1': {
-        src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop',
-        title: 'Macro Nature',
-        category: 'Macro Photography'
-    },
-    'bw-1': {
-        src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=1000&fit=crop',
-        title: 'Black & White Portrait',
-        category: 'Black & White Photography'
-    },
-    'aerial-1': {
-        src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop',
-        title: 'Aerial Landscape',
-        category: 'Aerial Photography'
+// Initialize portfolio when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    window.portfolioManager = new PortfolioManager();
+    
+    // Check URL hash for initial filter
+    const hash = window.location.hash;
+    if (hash && hash.includes('filter=')) {
+        const category = hash.split('=')[1];
+        setTimeout(() => {
+            window.portfolioManager.filterByCategory(category);
+        }, 100);
     }
-};
+});
 
-// Modal functionality
+// Global functions for backward compatibility
 function openModal(imageId, title, category) {
-    const modal = document.getElementById('image-modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalTitle = document.getElementById('modal-title');
-    const modalCategory = document.getElementById('modal-category');
-    
-    const data = imageData[imageId];
-    if (data) {
-        modalImage.src = data.src;
-        modalImage.alt = data.title;
-        modalTitle.textContent = data.title;
-        modalCategory.textContent = data.category;
-    } else {
-        modalImage.src = `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop`;
-        modalTitle.textContent = title;
-        modalCategory.textContent = category;
+    if (window.portfolioManager) {
+        window.portfolioManager.openImageModal(imageId);
     }
-    
-    modal.showModal();
 }
 
 function closeModal() {
-    const modal = document.getElementById('image-modal');
-    modal.close();
+    if (window.portfolioManager) {
+        window.portfolioManager.closeModal();
+    }
 }
 
-// Initialize portfolio functionality
-document.addEventListener('DOMContentLoaded', function() {
-    initializePortfolioFiltering();
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    });
-});
+// Export for module usage
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = PortfolioManager;
+}
