@@ -1,8 +1,5 @@
 // Main JavaScript for Ratul Chowdhury Photography Portfolio
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize theme system
-    initializeTheme();
-    
     // Initialize smooth scrolling
     initializeSmoothScrolling();
     
@@ -15,36 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize contact form validation
     initializeContactForm();
 });
-
-// Theme Management System
-function initializeTheme() {
-    const themeController = document.querySelector('.theme-controller');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or default to 'light'
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    
-    // Update checkbox state
-    if (themeController) {
-        themeController.checked = savedTheme === 'dark';
-    }
-    
-    // Theme toggle functionality
-    if (themeController) {
-        themeController.addEventListener('change', function() {
-            const newTheme = this.checked ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Add smooth transition effect
-            html.style.transition = 'all 0.3s ease-in-out';
-            setTimeout(() => {
-                html.style.transition = '';
-            }, 300);
-        });
-    }
-}
 
 // Smooth Scrolling Implementation
 function initializeSmoothScrolling() {
@@ -105,29 +72,6 @@ function initializeNavigation() {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('active');
         }
-    });
-    
-    // Navbar scroll effect
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Hide navbar on scroll down, show on scroll up (mobile)
-        if (window.innerWidth <= 768) {
-            if (scrollTop > lastScrollTop && scrollTop > 200) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-        }
-        
-        lastScrollTop = scrollTop;
     });
     
     // Mobile menu close on link click

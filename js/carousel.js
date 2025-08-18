@@ -72,7 +72,7 @@ class CarouselManager {
         if (!carouselContainer) return;
         
         const playPauseBtn = document.createElement('button');
-        playPauseBtn.className = 'btn btn-circle btn-sm bg-black bg-opacity-50 text-white border-none absolute top-4 left-1/2 transform -translate-x-1/2 z-20 hover:bg-opacity-70 transition-all duration-300';
+        playPauseBtn.className = 'btn btn-circle btn-sm bg-white bg-opacity-80 text-gray-900 border-none absolute top-4 left-1/2 transform -translate-x-1/2 z-20 hover:bg-opacity-100 transition-all duration-300';
         playPauseBtn.setAttribute('aria-label', 'Pause carousel');
         playPauseBtn.innerHTML = `
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -258,7 +258,7 @@ class CarouselManager {
         if (!carousel) return;
         
         const counter = document.createElement('div');
-        counter.className = 'absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 bg-black bg-opacity-50 text-white px-3 py-1 rounded-lg text-sm font-medium';
+        counter.className = 'absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 bg-white bg-opacity-80 text-gray-900 px-3 py-1 rounded-lg text-sm font-medium';
         counter.setAttribute('aria-live', 'polite');
         counter.textContent = `1 of ${this.totalSlides}`;
         
