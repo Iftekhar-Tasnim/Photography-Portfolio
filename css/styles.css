@@ -428,3 +428,47 @@ select:-webkit-autofill:focus {
 	-webkit-box-shadow: 0 0 0px 1000px hsl(var(--b1, 0 0% 100%)) inset;
 	transition: background-color 5000s ease-in-out 0s;
 }
+
+/* Readable form enhancements */
+.form-readable .label .label-text {
+    color: #111827 !important; /* gray-900 */
+    font-weight: 600;
+}
+.form-readable .input,
+.form-readable .select,
+.form-readable .textarea {
+    font-size: 1rem;
+    line-height: 1.5;
+    border-color: #D1D5DB !important; /* gray-300 */
+    border-width: 1px !important;
+    background: #ffffff !important;
+    color: #111827 !important; /* gray-900 */
+}
+.form-readable .input::placeholder,
+.form-readable .textarea::placeholder {
+    color: #6B7280 !important; /* gray-500 */
+}
+.form-readable .input:hover,
+.form-readable .select:hover,
+.form-readable .textarea:hover {
+    border-color: #9CA3AF !important; /* gray-400 */
+    box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.25);
+}
+.form-readable .input:focus,
+.form-readable .select:focus,
+.form-readable .textarea:focus {
+    border-color: #2563EB !important; /* primary-ish */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    outline: none;
+}
+.form-readable .label {
+    margin-bottom: 0.25rem;
+}
+.form-readable .form-control {
+    gap: 0.25rem;
+}
+.form-readable .btn[type="submit"] {
+    font-size: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}

@@ -17,10 +17,47 @@ class PortfolioManager {
         this.initializeKeyboardNavigation();
         this.initializeTouchGestures();
         this.initializeLazyLoading();
+        this.initializeAlbumTabs();
+    }
+
+    initializeAlbumTabs() {
+        const tabs = document.querySelectorAll('.album-tab');
+        const panels = document.querySelectorAll('.album-panel');
+        if (!tabs.length || !panels.length) return;
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.getAttribute('data-target');
+                // update active tab
+                tabs.forEach(t => t.classList.remove('tab-active'));
+                tab.classList.add('tab-active');
+                // toggle panels
+                panels.forEach(panel => {
+                    if (panel.id === targetId) {
+                        panel.classList.remove('hidden');
+                    } else {
+                        panel.classList.add('hidden');
+                    }
+                });
+            });
+        });
     }
     
     initializePortfolio() {
         // Get all portfolio items
+        const allowedCategories = new Set(['nature', 'portrait', 'street']);
+        const allItems = Array.from(document.querySelectorAll('.portfolio-item'));
+
+        // Remove any item that does not belong to one of the three allowed albums
+        allItems.forEach(item => {
+            const itemCategories = (item.dataset.category || '').split(' ');
+            const belongsToAllowedAlbum = itemCategories.some(cat => allowedCategories.has(cat));
+            if (!belongsToAllowedAlbum && item.parentElement) {
+                item.remove();
+            }
+        });
+
+        // Re-query remaining items (only 3 albums)
         this.portfolioItems = document.querySelectorAll('.portfolio-item');
         this.images = Array.from(this.portfolioItems).map(item => ({
             id: item.dataset.category?.split(' ')[0] || 'unknown',
