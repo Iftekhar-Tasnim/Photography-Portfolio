@@ -273,20 +273,18 @@
             </div>
         </div>
         <script>
-        // Auto-generate gallery from local folders and paginate via Show more
+        // Auto-generate gallery from local folders (render ALL items at once)
         (function(){
             const gallery = document.getElementById('gallery');
             if (!gallery) return;
-            const landscapes = [
-                'asset/img/Landscapes/DSC07007.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__181.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__66.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1087.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_118.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1312.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1331.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1336.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_14.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_141.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1456.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1504.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1547.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1556.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1558.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_161.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_201.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_41.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_609.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_727.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_732.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_786.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_828.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_872.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_899.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_9.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_918.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_920.jpg']
-            const street = [
-                'asset/img/Street & Daily Life/DSC00317.jpg','asset/img/Street & Daily Life/IMG_0003.jpg','asset/img/Street & Daily Life/IMG_0043.jpg','asset/img/Street & Daily Life/IMG_0191.jpg','asset/img/Street & Daily Life/IMG_0581.jpg','asset/img/Street & Daily Life/IMG_0897.jpg','asset/img/Street & Daily Life/IMG_9635.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__152.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__164.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__219.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__272.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__283.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__290.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__301.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__335.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__338.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__343.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__366.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__402.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__409.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street124.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street174.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street194.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street235.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street236.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street256.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street303.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street358.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street370.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street438.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street465.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street543.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street583.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street597.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street636.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street657.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street659.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street681.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street724.jpg','asset/img/Street & Daily Life/Street__1.jpg']
+            const landscapes = ['asset/img/Landscapes/DSC07007.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__181.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__66.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1087.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_118.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1312.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1331.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1336.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_14.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_141.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1456.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1504.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1547.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1556.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1558.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_161.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_201.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_41.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_609.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_727.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_732.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_786.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_828.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_872.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_899.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_9.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_918.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_920.jpg'];
+            const street = ['asset/img/Street & Daily Life/DSC00317.jpg','asset/img/Street & Daily Life/IMG_0003.jpg','asset/img/Street & Daily Life/IMG_0043.jpg','asset/img/Street & Daily Life/IMG_0191.jpg','asset/img/Street & Daily Life/IMG_0581.jpg','asset/img/Street & Daily Life/IMG_0897.jpg','asset/img/Street & Daily Life/IMG_9635.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__152.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__164.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__219.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__272.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__283.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__290.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__301.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__335.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__338.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__343.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__366.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__402.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__409.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street124.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street174.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street194.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street235.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street236.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street256.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street303.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street358.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street370.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street438.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street465.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street543.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street583.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street597.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street636.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street657.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street659.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street681.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street724.jpg','asset/img/Street & Daily Life/Street__1.jpg'];
 
-            const items = [];
-            landscapes.forEach(p => items.push({path:p,cat:'nature',alt:'Landscape'}));
-            street.forEach(p => items.push({path:p,cat:'street',alt:'Street & Daily Life'}));
+            const existing = new Set(Array.from(document.querySelectorAll('#gallery img[data-src]')).map(i => i.getAttribute('data-src')));
+            const natureList = landscapes.filter(p => !existing.has(p));
+            const streetList = street.filter(p => !existing.has(p));
 
-            const createItem = ({path,cat,alt}) => {
+            function createItem(path, cat, alt) {
                 const el = document.createElement('div');
                 el.className = 'portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer';
                 el.setAttribute('data-category', cat);
@@ -297,28 +295,14 @@
                         <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
                     </div>`;
                 gallery.appendChild(el);
-            };
-
-            // Initial page of 12
-            const PAGE = 12;
-            let rendered = 0;
-            const showMoreBtn = document.getElementById('show-more');
-            function renderNext() {
-                const next = items.slice(rendered, rendered + PAGE);
-                next.forEach(createItem);
-                rendered += next.length;
-                if (rendered >= items.length && showMoreBtn) showMoreBtn.classList.add('hidden');
-                // re-hook lazy observer if available
-                if (window.portfolioManager) {
-                    // Trigger lazy observer in portfolio manager
-                    const imgs = document.querySelectorAll('img[data-src]');
-                    imgs.forEach(i => { /* observer attached in manager */ });
-                }
             }
-            renderNext();
-            if (items.length > rendered && showMoreBtn) {
-                showMoreBtn.classList.remove('hidden');
-                showMoreBtn.onclick = renderNext;
+
+            natureList.forEach(p => createItem(p, 'nature', 'Landscape'));
+            streetList.forEach(p => createItem(p, 'street', 'Street & Daily Life'));
+
+            // Ensure the portfolio manager sees newly added items
+            if (window.portfolioManager) {
+                window.portfolioManager.refreshPortfolio();
             }
         })();
         </script>
