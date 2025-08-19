@@ -133,16 +133,35 @@ class PortfolioManager {
     }
     
     updateActiveFilter(activeButton) {
-        // Remove active class from all buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.remove('btn-primary');
+        // Reset all buttons to outlined and remove any color classes
+        const allButtons = document.querySelectorAll('.filter-btn');
+        const colorClasses = ['btn-primary', 'btn-secondary', 'btn-accent', 'btn-info', 'btn-success', 'btn-warning', 'btn-error', 'btn-neutral'];
+        allButtons.forEach(btn => {
             btn.classList.add('btn-outline');
+            colorClasses.forEach(c => btn.classList.remove(c));
         });
-        
-        // Add active class to clicked button
+
+        // Apply color per category on the active button
         if (activeButton) {
+            const category = activeButton.getAttribute('data-category') || 'all';
+            let colorClass = 'btn-neutral';
+            switch (category) {
+                case 'nature':
+                    colorClass = 'btn-success';
+                    break;
+                case 'portrait':
+                    colorClass = 'btn-accent';
+                    break;
+                case 'street':
+                    colorClass = 'btn-warning';
+                    break;
+                case 'all':
+                default:
+                    colorClass = 'btn-neutral';
+            }
+
             activeButton.classList.remove('btn-outline');
-            activeButton.classList.add('btn-primary');
+            activeButton.classList.add(colorClass);
         }
     }
     
