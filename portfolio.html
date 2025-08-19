@@ -164,7 +164,7 @@
     <section class="bg-gradient-to-b from-elegant-50 to-cream-100 py-12 md:py-16 border-b border-elegant-200/60">
         <div class="container mx-auto px-4 text-center max-w-3xl">
             <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Portfolio</h1>
-            <p class="mt-4 text-base md:text-lg text-taupe-600">Curated work across nature, portrait, and street photography. Filter to focus on what you love.</p>
+            <p class="mt-4 text-base md:text-lg text-taupe-600">Curated work across documentary, street, and landscape photography. 154 powerful images that tell stories of resilience, struggle, and human spirit. Filter to focus on what moves you.</p>
         </div>
     </section>
 
@@ -173,10 +173,12 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-3 py-4">
                 <button class="btn btn-outline filter-btn" data-category="all">All</button>
-                <button class="btn btn-outline filter-btn" data-category="nature">Landscapes</button>
+                <button class="btn btn-outline filter-btn" data-category="landscapes">Landscapes</button>
                 <button class="btn btn-outline filter-btn" data-category="street">Street &amp; Daily Life</button>
-                <button class="btn btn-outline filter-btn" data-category="nature">The July Uprising 2024: Collective Struggle and People’s Power in Bangladesh </button>
-                <button class="btn btn-outline filter-btn" data-category="street">TNZ Group Workers: United for Justice and Fair Wages</button>
+                <button class="btn btn-outline filter-btn" data-category="july-uprising">July Uprising 2024</button>
+                <button class="btn btn-outline filter-btn" data-category="maitree-jatra">Maitree Jatra 2025</button>
+                <button class="btn btn-outline filter-btn" data-category="tnz-protest">TNZ Protest</button>
+                <button class="btn btn-outline filter-btn" data-category="world-press">World Press Photo Exhibition</button>
             </div>
         </div>
     </section>
@@ -184,76 +186,9 @@
     <!-- Gallery Grid (Masonry) -->
     <section class="container mx-auto px-4 pb-20">
         <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-6">
-            <!-- Nature Items -->
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature">
+            <!-- Sample Items - Will be replaced by JavaScript -->
+            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="landscapes">
                 <img class="w-full h-auto object-cover lazy" alt="Landscape - Mountain valley" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature">
-                <img class="w-full h-auto object-cover lazy" alt="Landscape - Forest path" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <!-- Portrait Items -->
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Portrait - Close up" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/IMG_9635.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Portrait - Natural light" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/IMG_0897.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <!-- Street Items -->
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="street">
-                <img class="w-full h-auto object-cover lazy" alt="Street - City scene" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Street__1.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="street">
-                <img class="w-full h-auto object-cover lazy" alt="Street - Crosswalk" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Ratul Chowdhury_Street__366.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <!-- Mixed Items -->
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Landscape - Cliff silhouette" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait street">
-                <img class="w-full h-auto object-cover lazy" alt="Street - Alleyway portrait" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Ratul Chowdhury_Street__335.jpg" loading="lazy">
-                <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature street">
-                <img class="w-full h-auto object-cover lazy" alt="Landscape - Seaside" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -265,12 +200,181 @@
         (function(){
             const gallery = document.getElementById('gallery');
             if (!gallery) return;
-            const landscapes = ['asset/img/Landscapes/DSC07007.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__181.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__66.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1087.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_118.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1312.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1331.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1336.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_14.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_141.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1456.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1504.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1547.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1556.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1558.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_161.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_201.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_41.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_609.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_727.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_732.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_786.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_828.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_872.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_899.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_9.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_918.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_920.jpg'];
-            const street = ['asset/img/Street & Daily Life/DSC00317.jpg','asset/img/Street & Daily Life/IMG_0003.jpg','asset/img/Street & Daily Life/IMG_0043.jpg','asset/img/Street & Daily Life/IMG_0191.jpg','asset/img/Street & Daily Life/IMG_0581.jpg','asset/img/Street & Daily Life/IMG_0897.jpg','asset/img/Street & Daily Life/IMG_9635.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__152.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__164.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__219.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__272.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__283.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__290.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__301.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__335.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__338.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__343.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__366.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__402.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__409.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street124.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street174.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street194.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street235.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street236.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street256.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street303.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street358.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street370.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street438.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street465.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street543.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street583.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street597.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street636.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street657.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street659.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street681.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street724.jpg','asset/img/Street & Daily Life/Street__1.jpg'];
-
-            const existing = new Set(Array.from(document.querySelectorAll('#gallery img[data-src]')).map(i => i.getAttribute('data-src')));
-            const natureList = landscapes.filter(p => !existing.has(p));
-            const streetList = street.filter(p => !existing.has(p));
+            
+            // Clear existing items first
+            gallery.innerHTML = '';
+            
+            // All photos from each folder
+            const landscapes = [
+                'asset/img/Landscapes/DSC07007.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape__181.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape__66.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1087.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_118.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1312.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1331.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1336.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_14.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_141.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1456.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1504.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1547.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1556.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_1558.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_161.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_201.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_41.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_609.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_727.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_732.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_786.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_828.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_872.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_899.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_9.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_918.jpg',
+                'asset/img/Landscapes/Ratul Chowdhury_Landscape_920.jpg'
+            ];
+            
+            const street = [
+                'asset/img/Street & Daily Life/DSC00317.jpg',
+                'asset/img/Street & Daily Life/IMG_0003.jpg',
+                'asset/img/Street & Daily Life/IMG_0043.jpg',
+                'asset/img/Street & Daily Life/IMG_0191.jpg',
+                'asset/img/Street & Daily Life/IMG_0581.jpg',
+                'asset/img/Street & Daily Life/IMG_0897.jpg',
+                'asset/img/Street & Daily Life/IMG_9635.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__152.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__164.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__219.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__272.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__283.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__290.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__301.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__335.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__338.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__343.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__366.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__402.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street__409.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street124.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street174.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street194.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street235.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street236.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street256.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street303.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street358.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street370.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street438.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street465.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street543.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street583.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street597.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street636.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street657.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street659.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street681.jpg',
+                'asset/img/Street & Daily Life/Ratul Chowdhury_Street724.jpg',
+                'asset/img/Street & Daily Life/Street__1.jpg'
+            ];
+            
+            const julyUprising = [
+                'asset/img/July Uprising/IMG_9591.jpg',
+                'asset/img/July Uprising/IMG_0331.jpg',
+                'asset/img/July Uprising/IMG_9696.jpg',
+                'asset/img/July Uprising/IMG_0031.jpg',
+                'asset/img/July Uprising/IMG_0285.jpg',
+                'asset/img/July Uprising/IMG_0016.jpg',
+                'asset/img/July Uprising/IMG_9962.jpg',
+                'asset/img/July Uprising/IMG_9826.jpg',
+                'asset/img/July Uprising/IMG_9849.jpg',
+                'asset/img/July Uprising/IMG_9869.jpg',
+                'asset/img/July Uprising/IMG_9809.jpg',
+                'asset/img/July Uprising/IMG_0357.jpg',
+                'asset/img/July Uprising/IMG_9753.jpg',
+                'asset/img/July Uprising/IMG_9658.jpg',
+                'asset/img/July Uprising/IMG_9676.jpg',
+                'asset/img/July Uprising/IMG_9680.jpg',
+                'asset/img/July Uprising/IMG_9565.jpg',
+                'asset/img/July Uprising/IMG_9583.jpg',
+                'asset/img/July Uprising/IMG_9589.jpg',
+                'asset/img/July Uprising/IMG_9466.jpg',
+                'asset/img/July Uprising/IMG_9488.jpg',
+                'asset/img/July Uprising/IMG_9493.jpg'
+            ];
+            
+            const maitreeJatra = [
+                'asset/img/Maitree Jatra 2025/IMG_0071.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0073.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0129.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0056.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0358.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0010.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0015.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0349.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0092.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0331.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0006.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0033.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0002.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0145.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0185.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0078.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0149.jpg',
+                'asset/img/Maitree Jatra 2025/IMG_0125.jpg'
+            ];
+            
+            const worldPress = [
+                'asset/img/World Press Photo Exibhition 2024/IMG_0250.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0248.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0244.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0245.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0236.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0242.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0237.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0220.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0230.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0227.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0219.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0215.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0217.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0199.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0207.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0213.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0180.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0181.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0186.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0172.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0179.jpg',
+                'asset/img/World Press Photo Exibhition 2024/IMG_0169.jpg'
+            ];
+            
+            const tnzProtest = [
+                'asset/img/TNZ Protest/IMG_0551-2.jpg',
+                'asset/img/TNZ Protest/IMG_0779-2.jpg',
+                'asset/img/TNZ Protest/IMG_0526-2.jpg',
+                'asset/img/TNZ Protest/IMG_0401-2.jpg',
+                'asset/img/TNZ Protest/IMG_0466-2.jpg',
+                'asset/img/TNZ Protest/IMG_0196.jpg',
+                'asset/img/TNZ Protest/IMG_0357-2.jpg',
+                'asset/img/TNZ Protest/IMG_0384-2.jpg',
+                'asset/img/TNZ Protest/IMG_0343-2.jpg',
+                'asset/img/TNZ Protest/IMG_0092.jpg',
+                'asset/img/TNZ Protest/IMG_0131.jpg',
+                'asset/img/TNZ Protest/IMG_0042.jpg',
+                'asset/img/TNZ Protest/IMG_0087.jpg',
+                'asset/img/TNZ Protest/IMG_0007.jpg',
+                'asset/img/TNZ Protest/IMG_0027.jpg',
+                'asset/img/TNZ Protest/IMG_0018.jpg',
+                'asset/img/TNZ Protest/IMG_0037.jpg',
+                'asset/img/TNZ Protest/IMG_0014.jpg'
+            ];
 
             function createItem(path, cat, alt) {
                 const el = document.createElement('div');
@@ -285,17 +389,174 @@
                 gallery.appendChild(el);
             }
 
-            natureList.forEach(p => createItem(p, 'nature', 'Landscape'));
-            streetList.forEach(p => createItem(p, 'street', 'Street & Daily Life'));
+            // Create all items
+            landscapes.forEach(p => createItem(p, 'landscapes', 'Landscape'));
+            street.forEach(p => createItem(p, 'street', 'Street & Daily Life'));
+            julyUprising.forEach(p => createItem(p, 'july-uprising', 'July Uprising 2024'));
+            maitreeJatra.forEach(p => createItem(p, 'maitree-jatra', 'Maitree Jatra 2025'));
+            tnzProtest.forEach(p => createItem(p, 'tnz-protest', 'TNZ Protest'));
+            worldPress.forEach(p => createItem(p, 'world-press', 'World Press Photo Exhibition'));
 
             // Ensure the portfolio manager sees newly added items
             if (window.portfolioManager) {
                 window.portfolioManager.refreshPortfolio();
             }
+            
+            // Initialize portfolio manager after gallery is populated
+            try {
+                if (!window.portfolioManager) {
+                    window.portfolioManager = new PortfolioManager();
+                    console.log('Portfolio Manager initialized successfully');
+                    
+                    // Check URL hash for initial filter
+                    const hash = window.location.hash;
+                    if (hash && hash.includes('filter=')) {
+                        const category = hash.split('=')[1];
+                        setTimeout(() => {
+                            window.portfolioManager.filterByCategory(category);
+                        }, 100);
+                    }
+                }
+            } catch (error) {
+                console.error('Error initializing Portfolio Manager:', error);
+            }
         })();
         </script>
         <div class="text-center mt-6">
             <button id="show-more" class="btn btn-outline hidden">Show more</button>
+        </div>
+    </section>
+
+    <!-- Editorial & Documentary Projects Section -->
+    <section class="bg-gradient-to-b from-cream-50 to-elegant-50 py-20 border-t border-elegant-200/60">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Editorial & Documentary Projects</h2>
+                <p class="text-lg text-taupe-600 max-w-3xl mx-auto">Documenting real stories that matter - from social movements to human resilience, capturing the essence of collective struggle and change.</p>
+            </div>
+
+            <!-- The July Uprising 2024 -->
+            <div class="mb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-taupe-800">The July Uprising 2024: Collective Struggle and People's Power in Bangladesh</h3>
+                        <div class="prose prose-lg text-taupe-700 space-y-4">
+                            <p>The July Uprising 2024 in Bangladesh was a historic moment when thousands of ordinary people came together to demand justice, dignity and change. What began with students quickly grew into a nationwide movement that drew in workers, teachers, rickshaw pullers and communities from every corner of the country. It was a time when strangers stood side by side, proving that collective strength is more powerful than fear.</p>
+                            <p>These photographs document the uprising not just as political unrest, but as a human story of resilience, grief, and solidarity. In the crowded streets of Dhaka and beyond, voices united in chants for freedom and accountability. Faces of exhaustion, determination and quiet defiance told a story no speech could capture the story of a people who refused to be silenced.</p>
+                            <p>The July Uprising 2024 will be remembered as more than a political movement. It was a collective cry for justice and a testament to the enduring belief in people power. Even in the most difficult moments, the uprising proved that when citizens rise together with courage and unity, they can reshape history.</p>
+                        </div>
+                    </div>
+                                         <div class="grid grid-cols-2 gap-4">
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/July Uprising/IMG_9591.jpg" alt="July Uprising 2024 - Collective Struggle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/July Uprising/IMG_0331.jpg" alt="July Uprising 2024 - People's Power" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/July Uprising/IMG_9696.jpg" alt="July Uprising 2024 - Street Protest" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/July Uprising/IMG_0031.jpg" alt="July Uprising 2024 - Unity in Struggle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Narir Dake Maitree Jatra 2025 -->
+            <div class="mb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                         <div class="grid grid-cols-2 gap-4 lg:order-2">
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/Maitree Jatra 2025/IMG_0071.jpg" alt="Maitree Jatra 2025 - Women's March" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/Maitree Jatra 2025/IMG_0073.jpg" alt="Maitree Jatra 2025 - Equality Rally" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/Maitree Jatra 2025/IMG_0129.jpg" alt="Maitree Jatra 2025 - Solidarity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                         <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                             <img src="asset/img/Maitree Jatra 2025/IMG_0056.jpg" alt="Maitree Jatra 2025 - Justice March" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                         </div>
+                     </div>
+                    <div class="space-y-6 lg:order-1">
+                        <h3 class="text-3xl font-bold text-taupe-800">Narir Dake Maitree Jatra 2025: Women's March for Equality and Justice in Bangladesh</h3>
+                        <div class="prose prose-lg text-taupe-700 space-y-4">
+                            <p>The Narir Dake Maitree Jatra 2024 in Dhaka, Bangladesh, was a landmark women-led march demanding equal rights, dignity, and social justice. Held in front of the National Parliament at Manik Mia Avenue, the procession united women workers, students, teachers, cultural activists, professionals, and supporters from diverse communities under the central slogan: "We are for equality."</p>
+                            <p>Participants marched with colourful banners and placards, calling for 33% political representation for women, urgent legal reforms, protection of marginalised groups, and recognition of invisible labour. The declaration strongly condemned gender-based violence, government inaction, wage disparity, and systemic exclusion of women and minorities.</p>
+                            <p>The procession also extended solidarity to sex workers, LGBTQ+ communities, migrant workers, and indigenous women of the Chattogram Hill Tracts. Slogans rang out against patriarchy, fascism, and inequality, while cultural groups and student organisations amplified the collective demands for justice.</p>
+                            <p>As organisers noted, the Maitree Jatra was not an isolated event but part of Bangladesh's long continuum of struggles — from the 1971 Liberation War to anti-rape protests, labour movements, and indigenous rights activism. The march reaffirmed the power of collective action, declaring that the rights of women and marginalised groups are non-negotiable.</p>
+                            <p>Through these photographs, the march is documented as both a political statement and a human story of courage, solidarity, and the refusal to remain silent in the face of injustice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TNZ Group Workers -->
+            <div class="mb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-taupe-800">TNZ Group Workers: United for Justice and Fair Wages</h3>
+                        <div class="prose prose-lg text-taupe-700 space-y-4">
+                            <p>Workers from the TNZ Group garment factories in Gazipur, Bangladesh, resumed a sit-in protest demanding the payment of overdue wages and bonuses. This movement highlights the ongoing struggle of labourers asserting their rights and the power of collective action in confronting economic injustice.</p>
+                            <p>The protest, taking place in front of Sram Bhaban in Dhaka, brought together workers from eight factories, supported by labour leaders and activists. The demonstrators' determination reflects the broader fight for fair wages, workplace justice, and respect for labour rights in Bangladesh's garment sector. The sit-in also underscores the resilience of workers who, despite previous promises by factory authorities, returned to the streets when their demands were unmet.</p>
+                            <p>The TNZ Group sit-in stands as a testament to workers' determination to claim their rights, highlighting the critical intersection of labour activism, social justice, and citizen advocacy in Bangladesh.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="asset/img/TNZ Protest/IMG_0551-2.jpg" alt="TNZ Protest - Workers' Determination" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="asset/img/TNZ Protest/IMG_0779-2.jpg" alt="TNZ Protest - Collective Action" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="asset/img/TNZ Protest/IMG_0526-2.jpg" alt="TNZ Protest - Workers' Rights" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="aspect-square rounded-lg overflow-hidden shadow-lg">
+                            <img src="asset/img/TNZ Protest/IMG_0401-2.jpg" alt="TNZ Protest - Solidarity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                         <!-- Published Work Section -->
+             <div class="bg-white rounded-2xl p-8 shadow-lg border border-elegant-200">
+                 <h3 class="text-2xl font-bold text-taupe-800 mb-6">Published Work</h3>
+                 <div class="space-y-6">
+                     <div>
+                         <h4 class="text-xl font-semibold text-taupe-700 mb-3">World Press Photo Exhibition 2024 in Dhaka: Global Stories Through the Lens</h4>
+                         <div class="prose prose-lg text-taupe-700 space-y-4">
+                             <p>The World Press Photo Exhibition 2024 at Drik Gallery, Dhaka, brought together some of the most powerful visual stories from around the globe. Curated from the prestigious World Press Photo Contest, the exhibition highlighted humanity's pressing issues climate change, conflict, migration and resilience. Each frame reflected the universal power of photojournalism to document truth and inspire change.</p>
+                             <p>Covering the event for The Daily Star, I explored how this exhibition connected global struggles with local realities. Voices from distinguished guests such as Shahidul Alam, Irma van Dueren, and Irene Khan framed the exhibition as not only an artistic endeavor but also a statement on press freedom and democracy.</p>
+                             <p>From raw portrayals of war to intimate stories of displacement, the images reminded viewers that photography transcends borders, becoming both testimony and protest. In Dhaka's context, where the fight for free expression remains deeply rooted in history, the exhibition carried a powerful message: photography is not just about seeing, but about understanding.</p>
+                         </div>
+                         
+                         <!-- Exhibition Photos Grid -->
+                         <div class="grid grid-cols-3 gap-4 mt-6">
+                             <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                                 <img src="asset/img/World Press Photo Exibhition 2024/IMG_0250.jpg" alt="World Press Photo Exhibition 2024 - Gallery View" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             </div>
+                             <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                                 <img src="asset/img/World Press Photo Exibhition 2024/IMG_0248.jpg" alt="World Press Photo Exhibition 2024 - Exhibition Space" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             </div>
+                             <div class="aspect-square rounded-lg overflow-hidden shadow-md">
+                                 <img src="asset/img/World Press Photo Exibhition 2024/IMG_0244.jpg" alt="World Press Photo Exhibition 2024 - Global Stories" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                             </div>
+                         </div>
+                         
+                         <div class="mt-4">
+                             <a href="https://www.thedailystar.net/entertainment/theatre-arts/news/world-press-photo-exhibition-2024-visual-journey-through-global-stories-dhaka-3737991" target="_blank" class="inline-flex items-center text-taupe-600 hover:text-taupe-800 transition-colors">
+                                 <span>Read the full article</span>
+                                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                 </svg>
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
     </section>
 
@@ -410,6 +671,21 @@
                     });
                 }
             }
+            
+            // Debug: Check if portfolio manager is working
+            setTimeout(() => {
+                console.log('Portfolio Manager Status:', window.portfolioManager);
+                console.log('Filter Buttons:', document.querySelectorAll('.filter-btn'));
+                console.log('Portfolio Items:', document.querySelectorAll('.portfolio-item'));
+                
+                // Test filter button clicks
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        console.log('Filter button clicked:', this.dataset.category);
+                    });
+                });
+            }, 2000);
         });
     </script>
 </body>

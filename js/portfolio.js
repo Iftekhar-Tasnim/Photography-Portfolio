@@ -44,19 +44,8 @@ class PortfolioManager {
     }
     
     initializePortfolio() {
-        // Get all portfolio items
-        const allowedCategories = new Set(['nature', 'portrait', 'street']);
+        // Get all portfolio items - allow all categories
         const allItems = Array.from(document.querySelectorAll('.portfolio-item'));
-
-        // Remove any item that does not belong to one of the allowed albums
-        allItems.forEach(item => {
-            const itemCategories = (item.dataset.category || '').split(' ');
-            const belongsToAllowedAlbum = itemCategories.some(cat => allowedCategories.has(cat));
-            if (!belongsToAllowedAlbum && item.parentElement) {
-                item.remove();
-            }
-        });
-
         this.refreshPortfolio();
     }
 
@@ -103,20 +92,10 @@ class PortfolioManager {
         // Ensure we include any items added after initial load
         this.refreshPortfolio();
         this.portfolioItems.forEach(item => {
-            const itemCategories = item.dataset.category?.split(' ') || [];
-            const img = item.querySelector('img');
-            const rawPath = (img?.getAttribute('data-src') || img?.getAttribute('src') || '').replace(/%20/g, ' ');
-            const inStreetFolder = rawPath.includes('asset/img/Street & Daily Life/');
-            const inLandscapeFolder = rawPath.includes('asset/img/Landscapes/');
-
-            let matchesFolder = true;
-            if (category === 'street') {
-                matchesFolder = inStreetFolder;
-            } else if (category === 'nature') {
-                matchesFolder = inLandscapeFolder;
-            }
-
-            const shouldShow = category === 'all' || (itemCategories.includes(category) && matchesFolder);
+            const itemCategory = item.dataset.category || '';
+            
+            // Simple category matching - show if it matches or if "all" is selected
+            const shouldShow = category === 'all' || itemCategory === category;
             
             if (shouldShow) {
                 item.style.display = 'block';
@@ -159,14 +138,23 @@ class PortfolioManager {
             const category = activeButton.getAttribute('data-category') || 'all';
             let colorClass = 'btn-neutral';
             switch (category) {
-                case 'nature':
+                case 'landscapes':
                     colorClass = 'btn-success';
-                    break;
-                case 'portrait':
-                    colorClass = 'btn-accent';
                     break;
                 case 'street':
                     colorClass = 'btn-warning';
+                    break;
+                case 'july-uprising':
+                    colorClass = 'btn-error';
+                    break;
+                case 'maitree-jatra':
+                    colorClass = 'btn-accent';
+                    break;
+                case 'tnz-protest':
+                    colorClass = 'btn-secondary';
+                    break;
+                case 'world-press':
+                    colorClass = 'btn-info';
                     break;
                 case 'all':
                 default:
@@ -414,19 +402,8 @@ class PortfolioManager {
     }
 }
 
-// Initialize portfolio when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    window.portfolioManager = new PortfolioManager();
-    
-    // Check URL hash for initial filter
-    const hash = window.location.hash;
-    if (hash && hash.includes('filter=')) {
-        const category = hash.split('=')[1];
-        setTimeout(() => {
-            window.portfolioManager.filterByCategory(category);
-        }, 100);
-    }
-});
+// Portfolio manager will be initialized after gallery is populated
+// This prevents initialization before gallery items exist
 
 // Global functions for backward compatibility
 function openModal(imageId, title, category) {
