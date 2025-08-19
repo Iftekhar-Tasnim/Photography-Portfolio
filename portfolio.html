@@ -164,7 +164,7 @@
     <section class="bg-gradient-to-b from-elegant-50 to-cream-100 py-12 md:py-16 border-b border-elegant-200/60">
         <div class="container mx-auto px-4 text-center max-w-3xl">
             <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Portfolio</h1>
-            <p class="mt-4 text-base md:text-lg text-taupe-600">Curated work across documentary, street, and landscape photography. 154 powerful images that tell stories of resilience, struggle, and human spirit. Filter to focus on what moves you.</p>
+            <p class="mt-4 text-base md:text-lg text-taupe-600">Curated work across documentary, street, and landscape photography. 157 powerful images that tell stories of resilience, struggle, and human spirit. Filter to focus on what moves you.</p>
         </div>
     </section>
 
@@ -173,12 +173,13 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-3 py-4">
                 <button class="btn btn-outline filter-btn" data-category="all">All</button>
-                <button class="btn btn-outline filter-btn" data-category="landscapes">Landscapes</button>
-                <button class="btn btn-outline filter-btn" data-category="street">Street &amp; Daily Life</button>
-                <button class="btn btn-outline filter-btn" data-category="july-uprising">July Uprising 2024</button>
-                <button class="btn btn-outline filter-btn" data-category="maitree-jatra">Maitree Jatra 2025</button>
-                <button class="btn btn-outline filter-btn" data-category="tnz-protest">TNZ Protest</button>
-                <button class="btn btn-outline filter-btn" data-category="world-press">World Press Photo Exhibition</button>
+                <button class="btn btn-outline filter-btn" data-category="Hero_img">Hero Images</button>
+                <button class="btn btn-outline filter-btn" data-category="Landscapes">Landscapes</button>
+                <button class="btn btn-outline filter-btn" data-category="Street & Daily Life">Street &amp; Daily Life</button>
+                <button class="btn btn-outline filter-btn" data-category="July Uprising">July Uprising 2024</button>
+                <button class="btn btn-outline filter-btn" data-category="Maitree Jatra 2025">Maitree Jatra 2025</button>
+                <button class="btn btn-outline filter-btn" data-category="TNZ Protest">TNZ Protest</button>
+                <button class="btn btn-outline filter-btn" data-category="World Press Photo Exibhition 2024">World Press Photo Exhibition</button>
             </div>
         </div>
     </section>
@@ -204,7 +205,7 @@
             // Clear existing items first
             gallery.innerHTML = '';
             
-            // All photos from each folder
+            // All photos from each folder - using exact folder names as categories
             const landscapes = [
                 'asset/img/Landscapes/DSC07007.jpg',
                 'asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg',
@@ -375,6 +376,13 @@
                 'asset/img/TNZ Protest/IMG_0037.jpg',
                 'asset/img/TNZ Protest/IMG_0014.jpg'
             ];
+            
+            // Add Hero_img folder photos
+            const heroImg = [
+                'asset/img/Hero_img/hero_1.jpg',
+                'asset/img/Hero_img/hero_2.jpg',
+                'asset/img/Hero_img/hero_3.jpg'
+            ];
 
             function createItem(path, cat, alt) {
                 const el = document.createElement('div');
@@ -389,13 +397,26 @@
                 gallery.appendChild(el);
             }
 
-            // Create all items
-            landscapes.forEach(p => createItem(p, 'landscapes', 'Landscape'));
-            street.forEach(p => createItem(p, 'street', 'Street & Daily Life'));
-            julyUprising.forEach(p => createItem(p, 'july-uprising', 'July Uprising 2024'));
-            maitreeJatra.forEach(p => createItem(p, 'maitree-jatra', 'Maitree Jatra 2025'));
-            tnzProtest.forEach(p => createItem(p, 'tnz-protest', 'TNZ Protest'));
-            worldPress.forEach(p => createItem(p, 'world-press', 'World Press Photo Exhibition'));
+            // Create all items with exact folder names as categories
+            landscapes.forEach(p => createItem(p, 'Landscapes', 'Landscape'));
+            street.forEach(p => createItem(p, 'Street & Daily Life', 'Street & Daily Life'));
+            julyUprising.forEach(p => createItem(p, 'July Uprising', 'July Uprising 2024'));
+            maitreeJatra.forEach(p => createItem(p, 'Maitree Jatra 2025', 'Maitree Jatra 2025'));
+            tnzProtest.forEach(p => createItem(p, 'TNZ Protest', 'TNZ Protest'));
+            worldPress.forEach(p => createItem(p, 'World Press Photo Exibhition 2024', 'World Press Photo Exhibition'));
+            heroImg.forEach(p => createItem(p, 'Hero_img', 'Hero Image'));
+            
+            // Log the total items created
+            console.log('Gallery populated with:', {
+                'Landscapes': landscapes.length,
+                'Street & Daily Life': street.length,
+                'July Uprising': julyUprising.length,
+                'Maitree Jatra 2025': maitreeJatra.length,
+                'TNZ Protest': tnzProtest.length,
+                'World Press Photo Exibhition 2024': worldPress.length,
+                'Hero_img': heroImg.length,
+                'Total': landscapes.length + street.length + julyUprising.length + maitreeJatra.length + tnzProtest.length + worldPress.length + heroImg.length
+            });
 
             // Ensure the portfolio manager sees newly added items
             if (window.portfolioManager) {
@@ -403,23 +424,25 @@
             }
             
             // Initialize portfolio manager after gallery is populated
-            try {
-                if (!window.portfolioManager) {
-                    window.portfolioManager = new PortfolioManager();
-                    console.log('Portfolio Manager initialized successfully');
-                    
-                    // Check URL hash for initial filter
-                    const hash = window.location.hash;
-                    if (hash && hash.includes('filter=')) {
-                        const category = hash.split('=')[1];
-                        setTimeout(() => {
-                            window.portfolioManager.filterByCategory(category);
-                        }, 100);
+            setTimeout(() => {
+                try {
+                    if (!window.portfolioManager) {
+                        window.portfolioManager = new PortfolioManager();
+                        console.log('Portfolio Manager initialized successfully');
+                        
+                        // Check URL hash for initial filter
+                        const hash = window.location.hash;
+                        if (hash && hash.includes('filter=')) {
+                            const category = hash.split('=')[1];
+                            setTimeout(() => {
+                                window.portfolioManager.filterByCategory(category);
+                            }, 100);
+                        }
                     }
+                } catch (error) {
+                    console.error('Error initializing Portfolio Manager:', error);
                 }
-            } catch (error) {
-                console.error('Error initializing Portfolio Manager:', error);
-            }
+            }, 500);
         })();
         </script>
         <div class="text-center mt-6">
@@ -683,9 +706,11 @@
                 filterButtons.forEach(btn => {
                     btn.addEventListener('click', function() {
                         console.log('Filter button clicked:', this.dataset.category);
+                        console.log('Total portfolio items:', document.querySelectorAll('.portfolio-item').length);
+                        console.log('Items with this category:', document.querySelectorAll(`[data-category="${this.dataset.category}"]`).length);
                     });
                 });
-            }, 2000);
+            }, 3000);
         });
     </script>
 </body>

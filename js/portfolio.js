@@ -138,23 +138,26 @@ class PortfolioManager {
             const category = activeButton.getAttribute('data-category') || 'all';
             let colorClass = 'btn-neutral';
             switch (category) {
-                case 'landscapes':
+                case 'Landscapes':
                     colorClass = 'btn-success';
                     break;
-                case 'street':
+                case 'Street & Daily Life':
                     colorClass = 'btn-warning';
                     break;
-                case 'july-uprising':
+                case 'July Uprising':
                     colorClass = 'btn-error';
                     break;
-                case 'maitree-jatra':
+                case 'Maitree Jatra 2025':
                     colorClass = 'btn-accent';
                     break;
-                case 'tnz-protest':
+                case 'TNZ Protest':
                     colorClass = 'btn-secondary';
                     break;
-                case 'world-press':
+                case 'World Press Photo Exibhition 2024':
                     colorClass = 'btn-info';
+                    break;
+                case 'Hero_img':
+                    colorClass = 'btn-primary';
                     break;
                 case 'all':
                 default:
