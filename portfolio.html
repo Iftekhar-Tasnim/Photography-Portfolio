@@ -95,7 +95,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-elegant-50/90 backdrop-blur-md border-b border-elegant-200/50 shadow-sm">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-elegant-50/90 backdrop-blur-md border-b border-elegant-200/50 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Brand -->
@@ -185,8 +185,9 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap justify-center gap-3 py-4">
                 <button class="btn btn-outline filter-btn" data-category="all">All</button>
+                <button class="btn btn-outline filter-btn" data-category="nature">Landscapes</button>
+                <button class="btn btn-outline filter-btn" data-category="street">Street &amp; Daily Life</button>
                 <button class="btn btn-outline filter-btn" data-category="nature">The July Uprising 2024: Collective Struggle and People’s Power in Bangladesh </button>
-                <button class="btn btn-outline filter-btn" data-category="portrait">Narir Dake Maitree Jatra 2024: Women’s March for Equality and Justice in Bangladesh</button>
                 <button class="btn btn-outline filter-btn" data-category="street">TNZ Group Workers: United for Justice and Fair Wages</button>
             </div>
         </div>
@@ -194,10 +195,10 @@
 
     <!-- Gallery Grid (Masonry) -->
     <section class="container mx-auto px-4 pb-20">
-        <div class="columns-1 sm:columns-2 lg:columns-3 gap-6">
+        <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-6">
             <!-- Nature Items -->
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature">
-                <img class="w-full h-auto object-cover lazy" alt="Misty Mountains" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Landscape - Mountain valley" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -205,7 +206,7 @@
             </div>
 
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature">
-                <img class="w-full h-auto object-cover lazy" alt="Forest Sunrise" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Landscape - Forest path" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -214,7 +215,7 @@
 
             <!-- Portrait Items -->
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Golden Hour Portrait" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Portrait - Close up" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/IMG_9635.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -222,7 +223,7 @@
             </div>
 
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Studio Expression" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Portrait - Natural light" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/IMG_0897.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -231,7 +232,7 @@
 
             <!-- Street Items -->
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="street">
-                <img class="w-full h-auto object-cover lazy" alt="City Lights" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Street - City scene" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Street__1.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -239,7 +240,7 @@
             </div>
 
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="street">
-                <img class="w-full h-auto object-cover lazy" alt="Crosswalk Moments" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Street - Crosswalk" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Ratul Chowdhury_Street__366.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -248,7 +249,7 @@
 
             <!-- Mixed Items -->
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature portrait">
-                <img class="w-full h-auto object-cover lazy" alt="Cliffside Silhouette" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Landscape - Cliff silhouette" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -256,7 +257,7 @@
             </div>
 
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="portrait street">
-                <img class="w-full h-auto object-cover lazy" alt="Alleyway Style" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1519744346361-3f66fa843ec2?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Street - Alleyway portrait" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Street &amp; Daily Life/Ratul Chowdhury_Street__335.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
@@ -264,12 +265,65 @@
             </div>
 
             <div class="portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer" data-category="nature street">
-                <img class="w-full h-auto object-cover lazy" alt="Seaside Promenade" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://images.unsplash.com/photo-1498601761256-1efd988cfc03?auto=format&fit=crop&w=1200&q=80" loading="lazy">
+                <img class="w-full h-auto object-cover lazy" alt="Landscape - Seaside" src="data:image/gif;base64,R0lGODlhAQABAAAAACw" data-src="asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg" loading="lazy">
                 <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
                 </div>
             </div>
+        </div>
+        <script>
+        // Auto-generate gallery from local folders and paginate via Show more
+        (function(){
+            const gallery = document.getElementById('gallery');
+            if (!gallery) return;
+            const landscapes = [
+                'asset/img/Landscapes/DSC07007.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__111.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__181.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__50.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape__66.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1077.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1087.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_118.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1206.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1312.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1331.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1336.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_14.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_141.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1456.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1504.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1509.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1547.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1556.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_1558.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_161.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_201.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_41.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_609.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_727.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_732.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_786.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_828.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_872.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_899.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_9.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_918.jpg','asset/img/Landscapes/Ratul Chowdhury_Landscape_920.jpg']
+            const street = [
+                'asset/img/Street & Daily Life/DSC00317.jpg','asset/img/Street & Daily Life/IMG_0003.jpg','asset/img/Street & Daily Life/IMG_0043.jpg','asset/img/Street & Daily Life/IMG_0191.jpg','asset/img/Street & Daily Life/IMG_0581.jpg','asset/img/Street & Daily Life/IMG_0897.jpg','asset/img/Street & Daily Life/IMG_9635.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__152.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__164.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__219.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__272.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__283.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__290.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__301.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__335.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__338.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__343.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__366.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__402.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street__409.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street124.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street174.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street194.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street235.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street236.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street256.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street303.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street358.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street370.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street438.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street465.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street543.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street583.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street597.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street636.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street657.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street659.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street681.jpg','asset/img/Street & Daily Life/Ratul Chowdhury_Street724.jpg','asset/img/Street & Daily Life/Street__1.jpg']
+
+            const items = [];
+            landscapes.forEach(p => items.push({path:p,cat:'nature',alt:'Landscape'}));
+            street.forEach(p => items.push({path:p,cat:'street',alt:'Street & Daily Life'}));
+
+            const createItem = ({path,cat,alt}) => {
+                const el = document.createElement('div');
+                el.className = 'portfolio-item group relative mb-6 break-inside-avoid overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5 hover:ring-black/10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer';
+                el.setAttribute('data-category', cat);
+                el.innerHTML = `
+                    <img class="w-full h-auto object-cover lazy" alt="${alt}" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="${path}" loading="lazy">
+                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="px-4 py-2 rounded-full bg-white/90 text-gray-900 text-sm shadow">Click to view</div>
+                    </div>`;
+                gallery.appendChild(el);
+            };
+
+            // Initial page of 12
+            const PAGE = 12;
+            let rendered = 0;
+            const showMoreBtn = document.getElementById('show-more');
+            function renderNext() {
+                const next = items.slice(rendered, rendered + PAGE);
+                next.forEach(createItem);
+                rendered += next.length;
+                if (rendered >= items.length && showMoreBtn) showMoreBtn.classList.add('hidden');
+                // re-hook lazy observer if available
+                if (window.portfolioManager) {
+                    // Trigger lazy observer in portfolio manager
+                    const imgs = document.querySelectorAll('img[data-src]');
+                    imgs.forEach(i => { /* observer attached in manager */ });
+                }
+            }
+            renderNext();
+            if (items.length > rendered && showMoreBtn) {
+                showMoreBtn.classList.remove('hidden');
+                showMoreBtn.onclick = renderNext;
+            }
+        })();
+        </script>
+        <div class="text-center mt-6">
+            <button id="show-more" class="btn btn-outline hidden">Show more</button>
         </div>
     </section>
 
@@ -370,6 +424,20 @@
                         icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
                     }
                 });
+            }
+
+            // Show more functionality: hide items beyond first 6 and reveal on click
+            const items = Array.from(document.querySelectorAll('.portfolio-item'));
+            const showMoreBtn = document.getElementById('show-more');
+            if (items.length > 6) {
+                items.slice(6).forEach(el => el.classList.add('hidden', 'more-item'));
+                if (showMoreBtn) {
+                    showMoreBtn.classList.remove('hidden');
+                    showMoreBtn.addEventListener('click', () => {
+                        document.querySelectorAll('.more-item').forEach(el => el.classList.remove('hidden'));
+                        showMoreBtn.classList.add('hidden');
+                    });
+                }
             }
         });
     </script>

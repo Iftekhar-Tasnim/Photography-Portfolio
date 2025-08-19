@@ -48,7 +48,7 @@ class PortfolioManager {
         const allowedCategories = new Set(['nature', 'portrait', 'street']);
         const allItems = Array.from(document.querySelectorAll('.portfolio-item'));
 
-        // Remove any item that does not belong to one of the three allowed albums
+        // Remove any item that does not belong to one of the allowed albums
         allItems.forEach(item => {
             const itemCategories = (item.dataset.category || '').split(' ');
             const belongsToAllowedAlbum = itemCategories.some(cat => allowedCategories.has(cat));
@@ -57,29 +57,29 @@ class PortfolioManager {
             }
         });
 
-        // Re-query remaining items (only 3 albums)
-        this.portfolioItems = document.querySelectorAll('.portfolio-item');
-        this.images = Array.from(this.portfolioItems).map(item => ({
+        this.refreshPortfolio();
+    }
+
+    // Re-scan DOM and bind events to any new items (idempotent)
+    refreshPortfolio() {
+        const items = Array.from(document.querySelectorAll('.portfolio-item'));
+        this.portfolioItems = items;
+        this.images = items.map(item => ({
             id: item.dataset.category?.split(' ')[0] || 'unknown',
             title: item.querySelector('img')?.alt || 'Untitled',
             category: item.dataset.category || 'other',
             element: item
         }));
-        
-        // Add click event listeners
+
         this.portfolioItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                this.openModal(index);
-            });
-            
-            // Add hover effects
-            item.addEventListener('mouseenter', () => {
-                this.addHoverEffect(item);
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                this.removeHoverEffect(item);
-            });
+            if (!item.dataset.bound) {
+                item.addEventListener('click', () => {
+                    this.openModal(index);
+                });
+                item.addEventListener('mouseenter', () => this.addHoverEffect(item));
+                item.addEventListener('mouseleave', () => this.removeHoverEffect(item));
+                item.dataset.bound = 'true';
+            }
         });
     }
     
@@ -100,7 +100,8 @@ class PortfolioManager {
     
     filterPortfolio(category) {
         this.currentFilter = category;
-        
+        // Ensure we include any items added after initial load
+        this.refreshPortfolio();
         this.portfolioItems.forEach(item => {
             const itemCategories = item.dataset.category?.split(' ') || [];
             const shouldShow = category === 'all' || itemCategories.includes(category);
@@ -166,7 +167,7 @@ class PortfolioManager {
     }
     
     animateFilterChange() {
-        const container = document.querySelector('.columns-1');
+        const container = document.getElementById('gallery') || document.querySelector('.columns-1');
         if (container) {
             container.style.opacity = '0.5';
             container.style.transform = 'scale(0.98)';

@@ -63,8 +63,8 @@ function initializeSmoothScrolling() {
 
 // Navigation Enhancement
 function initializeNavigation() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.navbar a');
+    const primaryNav = document.querySelector('nav');
+    const navLinks = primaryNav ? primaryNav.querySelectorAll('a') : [];
     
     // Active link highlighting
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -75,16 +75,16 @@ function initializeNavigation() {
     });
     
     // Mobile menu close on link click
-    const mobileMenu = document.querySelector('.dropdown-content');
-    if (mobileMenu) {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    if (mobileMenu && mobileMenuButton) {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Close mobile menu
-                const dropdown = link.closest('.dropdown');
-                if (dropdown) {
-                    const button = dropdown.querySelector('[tabindex="0"]');
-                    if (button) {
-                        button.click();
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('svg');
+                    if (icon) {
+                        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
                     }
                 }
             });
