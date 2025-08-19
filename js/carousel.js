@@ -12,9 +12,13 @@ class CarouselManager {
     }
     
     init() {
+        console.log('CarouselManager: Initializing...');
         this.slides = document.querySelectorAll('.carousel-item');
         this.indicators = document.querySelectorAll('.carousel-indicator');
         this.totalSlides = this.slides.length;
+        
+        console.log('CarouselManager: Found', this.totalSlides, 'slides');
+        console.log('CarouselManager: Slides:', this.slides);
         
         if (this.totalSlides > 0) {
             this.initializeCarousel();
@@ -23,6 +27,9 @@ class CarouselManager {
             this.initializeTouchGestures();
             this.initializeKeyboardNavigation();
             this.initializeAccessibility();
+            console.log('CarouselManager: Initialization complete');
+        } else {
+            console.error('CarouselManager: No slides found!');
         }
     }
     
@@ -44,22 +51,19 @@ class CarouselManager {
     
     initializeControls() {
         // Previous button functionality
-        const prevButton = document.querySelector('[onclick="previousSlide()"]');
+        const prevButton = document.getElementById('prevButton');
         if (prevButton) {
-            prevButton.removeAttribute('onclick');
             prevButton.addEventListener('click', () => this.previousSlide());
         }
         
         // Next button functionality
-        const nextButton = document.querySelector('[onclick="nextSlide()"]');
+        const nextButton = document.getElementById('nextButton');
         if (nextButton) {
-            nextButton.removeAttribute('onclick');
             nextButton.addEventListener('click', () => this.nextSlide());
         }
         
         // Indicator functionality
         this.indicators.forEach((indicator, index) => {
-            indicator.removeAttribute('onclick');
             indicator.addEventListener('click', () => this.showSlide(index));
         });
         
@@ -249,27 +253,20 @@ class CarouselManager {
             indicator.setAttribute('aria-current', index === 0 ? 'true' : 'false');
         });
         
-        // Add slide counter
-        this.addSlideCounter();
+
     }
     
-    addSlideCounter() {
-        const carousel = document.querySelector('.carousel');
-        if (!carousel) return;
-        
-        const counter = document.createElement('div');
-        counter.className = 'absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20 bg-white bg-opacity-80 text-gray-900 px-3 py-1 rounded-lg text-sm font-medium';
-        counter.setAttribute('aria-live', 'polite');
-        counter.textContent = `1 of ${this.totalSlides}`;
-        
-        carousel.appendChild(counter);
-        this.slideCounter = counter;
-    }
+
     
     showSlide(index) {
-        if (this.isTransitioning || index < 0 || index >= this.totalSlides) return;
+        console.log('CarouselManager: showSlide called with index:', index);
+        if (this.isTransitioning || index < 0 || index >= this.totalSlides) {
+            console.log('CarouselManager: showSlide rejected - transitioning:', this.isTransitioning, 'index:', index, 'totalSlides:', this.totalSlides);
+            return;
+        }
         
         this.isTransitioning = true;
+        console.log('CarouselManager: Hiding current slide:', this.currentSlide);
         
         // Hide current slide
         if (this.slides[this.currentSlide]) {
@@ -279,6 +276,7 @@ class CarouselManager {
         
         // Update current slide
         this.currentSlide = index;
+        console.log('CarouselManager: Showing new slide:', index);
         
         // Show new slide
         if (this.slides[index]) {
@@ -290,10 +288,7 @@ class CarouselManager {
         // Update indicators
         this.updateIndicators(index);
         
-        // Update slide counter
-        if (this.slideCounter) {
-            this.slideCounter.textContent = `${index + 1} of ${this.totalSlides}`;
-        }
+
         
         // Update URL hash for bookmarking
         this.updateURLHash(index);
@@ -301,6 +296,7 @@ class CarouselManager {
         // Reset transition flag
         setTimeout(() => {
             this.isTransitioning = false;
+            console.log('CarouselManager: Transition complete');
         }, 800);
     }
     

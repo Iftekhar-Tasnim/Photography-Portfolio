@@ -104,7 +104,19 @@ class PortfolioManager {
         this.refreshPortfolio();
         this.portfolioItems.forEach(item => {
             const itemCategories = item.dataset.category?.split(' ') || [];
-            const shouldShow = category === 'all' || itemCategories.includes(category);
+            const img = item.querySelector('img');
+            const rawPath = (img?.getAttribute('data-src') || img?.getAttribute('src') || '').replace(/%20/g, ' ');
+            const inStreetFolder = rawPath.includes('asset/img/Street & Daily Life/');
+            const inLandscapeFolder = rawPath.includes('asset/img/Landscapes/');
+
+            let matchesFolder = true;
+            if (category === 'street') {
+                matchesFolder = inStreetFolder;
+            } else if (category === 'nature') {
+                matchesFolder = inLandscapeFolder;
+            }
+
+            const shouldShow = category === 'all' || (itemCategories.includes(category) && matchesFolder);
             
             if (shouldShow) {
                 item.style.display = 'block';
